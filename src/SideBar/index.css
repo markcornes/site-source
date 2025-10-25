@@ -1,0 +1,44 @@
+Link:link, 
+Link:visited, 
+Link:active, 
+Link:focus { 
+  color: darkgreen; /* desired color */ 
+  text-decoration: none; /* optional */ 
+}
+
+li:hover {
+  color: red;
+  text-decoration: underline double;
+}
+
+
+.sidebar {
+  background-color: #ffffff;
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 120px;
+  text-align: right;
+  padding: 10px;
+}
+
+.sidebar-links {
+  list-style-type: none;
+  border-spacing: 1px;
+  border-collapse: separate;
+  align-self: center;
+  padding-inline-start: 0;
+}
+
+.table-item {
+  text-decoration: none;
+  font-size: 15pt;
+  color: blue;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.table-item:hover {
+  color: red;
+  cursor: default;
+}
