@@ -1,6 +1,27 @@
+:root {
+  --sidebar-width: 120px;
+  --map-margin: 10px;
+}
+
 .App {
   height : 100%;
   width : 100%;
   background-color: rgb(195, 241, 226);
   font-family: 'Courier New', Courier, monospace;
+}
+
+.SideBarContainer {
+  position: absolute;
+  height : 100%;
+  width : var(--sidebar-width);
+  background-color: rgb(195, 241, 226);
+  font-family: 'Courier New', Courier, monospace;
+  color: black
+}
+
+.MapContainer {
+  margin-left: var(--sidebar-width);
+  height : 100vh;
+  width : calc(100% - var(--sidebar-width));
+  background-color: rgb(220, 245, 235);
 }

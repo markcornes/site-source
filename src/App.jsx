@@ -1,5 +1,4 @@
 import MakeSideBar from './SideBar';
-import InitMap from './gpx processor'
 import MapMaker from './Map'
 import './App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -10,12 +9,16 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="SideBarContainer">
         {MakeSideBar()}
       </div>
-      <Routes>
+      <div className="MapContainer">
+        {MapMaker()}
+      </div>
+      {/* <Routes>
         <Route path='/projects' element={<MapMaker />}/>
-      </Routes>
+        <Route path="*" element={<div>Not found</div>} />
+      </Routes> */}
     </BrowserRouter>
   );
 }
