@@ -1,16 +1,12 @@
 import './index.css'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react'
 
-const PAGES = ['home', 'projects', 'music', 'about']
-const PAGE_NAME = 'Home' // DON'T LEAVE THIS
+const PAGES = ['home', 'projects', 'music', 'bike-trip', 'about']
+const PAGE_NAME = 'home'
 
 function SideBarItem(item_name, page_name) {
-  if (item_name==page_name) {
-    return (<li className="table-item" key={item_name}><Link to={'/' + item_name}>{item_name}</Link></li>);
-  }
-  else {
-    return (<li className="table-item" key={item_name}><Link to={'/' + item_name}>{item_name}</Link></li>);
-  }
+  return (<li className="table-item" key={item_name}><NavLink to={'/' + item_name} className={({ isActive, isPending }) => isPending ? "active" : isActive ? "active" : "not-active"}>{item_name.replace('-',' ')}</NavLink></li>);
 }
 
 function AddSideBarItems() {
@@ -22,11 +18,13 @@ function AddSideBarItems() {
   return return_array;
 }
 
-function MakeSideBar() {
+function MakeSideBar(props) {
+
   return (
     <nav>
       <div className="sidebar sidebar-links">
-          {AddSideBarItems()}
+          <AddSideBarItems />
+          {/* <button onClick={props.set_Background(!props.is_Background)}>Background</button> */}
       </div>
     </nav>
   );

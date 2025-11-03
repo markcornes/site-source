@@ -1,0 +1,12 @@
+.ImagePopUp {
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.CustomMarker {
+    overflow: visible;
+    background-color: white;
+    padding: 5px;
+}

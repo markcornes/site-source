@@ -1,0 +1,7 @@
+{
+    "date": "3/11/2025",
+    "icon": "pin",
+    "title": "Welcome to my site!",
+    "paragraphs": ["This site is a mix of a personal blog and a test platform for web design ideas.", "The sidebar panel gets you around the site. The projects page is where I'll put a variety of web hosted programming projects, and the bike trip page details my solo bike trip across Europe (the other two pages are a work-in-progress...)."],
+    "images": ["https://i.imgur.com/JDJpwwW.jpg", "https://i.imgur.com/80Tvxpxl.jpg"]
+}

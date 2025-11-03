@@ -1,27 +1,47 @@
-:root {
-  --sidebar-width: 120px;
-  --map-margin: 10px;
+.App {
+  height : 100vh;
+  width : 100%;
+  /* background-color: var(--main-color); */
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.App {
-  height : 100%;
-  width : 100%;
-  background-color: rgb(195, 241, 226);
-  font-family: 'Courier New', Courier, monospace;
+.BackgroundContainer {
+  width: 100vw;
+  height: 100%;
 }
 
 .SideBarContainer {
-  position: absolute;
-  height : 100%;
-  width : var(--sidebar-width);
-  background-color: rgb(195, 241, 226);
+  /* background-color: var(--main-color); */
+  position: fixed;
+  display: flex;
+  height : 100vh;
+  width : calc(var(--sidebar-width) + var(--sidebar-padding)*2);
   font-family: 'Courier New', Courier, monospace;
-  color: black
+  padding: var(--sidebar-padding);
 }
 
-.MapContainer {
-  margin-left: var(--sidebar-width);
-  height : 100vh;
-  width : calc(100% - var(--sidebar-width));
-  background-color: rgb(220, 245, 235);
+.PageContainer {
+  margin-left: calc(var(--sidebar-width) + var(--sidebar-padding)* 2);
+  height: 100%;
+  padding-top: var(--page-v-padding);
+  padding-bottom: var(--page-v-padding);
+  padding-left: var(--page-h-padding);
+  padding-right: var(--page-h-padding);
+  font-family: 'Courier New', Courier, monospace;
+  /* width : calc(auto - var(--sidebar-width)) !important; */
+  /* overflow: hidden; */
+}
+
+.HomePage {
+    /* background-color: var(--page-bg-color); */
+    background-color: #a39e8588;
+    /* opacity: 50%; */
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    float: center;
+    border-radius: 30px;
+    cursor: default;
 }

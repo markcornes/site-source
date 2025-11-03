@@ -1,0 +1,157 @@
+h1 {
+    margin: 30px;
+    padding: 0;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 2px var(--page-bg-color);
+}
+
+p {
+    margin: 10px;
+    padding: 0;
+}
+
+.StravaIcon {
+    background-color: #fc4c02;
+    color: white;
+}
+
+.InstaIcon {
+    background: #833ab4;
+    background: linear-gradient(
+        200deg,
+        #833ab4,#fd1d60,#fcb045
+    );
+    color: white;
+}
+
+.YTIcon {
+    background-color: white;
+    color: #ff0000;
+    
+}
+
+.GithubIcon {
+    background-color: #333333;
+    color: white;
+}
+
+.HomeTitleContainer {
+    /* margin-left: auto; */
+    /* width: fit-content; */
+    width: auto;
+    /* padding-left: 50px;
+    padding-right: 50px; */
+    /* float: center; */
+    background-color: var(--title-bg-color);
+    text-align: center;
+    border-radius: 30px;
+    /* border-color: rgb(0, 0, 0);
+    border-width: 4px; */
+    transition: transform .5s ease-in-out;
+}
+.HomeTitleContainer:hover {
+    z-index: 1;
+    transform: scale(1.08);
+}
+
+.HomeTitle {
+    /* height: fit-content; */
+    color: var(--title-text-color);
+    font-size: 30pt;
+    text-shadow: 2px 2px var(--sidebar-hover-color);
+    padding-top: 1px;
+}
+
+.Links {
+    background-color: rgb(77, 119, 156);
+    width: fit-content;
+    height: 50px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 100px;
+    gap: 20px;
+    display: flex;
+}
+
+.LinksItem {
+    border-radius: 100%;
+    padding: 10px;
+    transition: transform .2s, opacity .2s;
+}
+
+.LinksItem:hover {
+    transform: scale(1.1);
+    opacity: 80%;
+}
+
+
+.SubTitle {
+    height: fit-content;
+    padding: 20px;
+    color: var(--title-text-color);
+    font-size: 20pt;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: 20px;
+    margin-left: 70px;
+}
+
+.SubTitle::after {
+    content: '';
+    width: 10px;
+    height: 22pt;
+    /* background: var(--title-text-color); */
+    background: var(--main-color);
+    /* box-shadow: 2px 2px var(--sidebar-hover-color); */
+    animation: cursor-blink 1.2s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 100;
+    }
+}
+
+.Article {
+    background-color: var(--article-bg-color);
+    padding: 50px;
+    /* color: var(--page-text-color); */
+    /* color: var(--sidebar-color); */
+    color: var(--sidebar-color);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: rgb(121, 107, 81) 3px 5px;
+    transition: transform .5s, box-shadow .5s;
+}
+
+.Article:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: rgb(121, 107, 81) 7px 9px;
+}
+
+.ArticleImageBox {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    width: fit-content;
+
+}
+
+.ArticleImage {
+    padding: 10px;
+    /* background: var(--sidebar-color); */
+    background: var(--sidebar-color);
+    box-shadow: rgb(124, 94, 11) 4px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}

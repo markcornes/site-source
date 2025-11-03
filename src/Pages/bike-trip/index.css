@@ -1,0 +1,144 @@
+.MapContainer {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: var(--map-margin);
+    padding-bottom: var(--map-margin);
+    height: calc(100vh - var(--map-margin) * 2 - var(--page-v-padding) * 2);
+    background-color: var(--page-bg-color);
+    border-radius: 30px;
+}
+
+.PopOutTab {
+    visibility: visible;
+    z-index: 1;
+    position: absolute;
+    left: calc(100vw - var(--tab-width));
+    /* left: 100vw; */
+    top: 200px;
+    width: calc(var(--tab-width) * 1.11);
+    height: var(--tab-height);
+    background-color: var(--sidebar-color);
+    color: var(--sidebar-inactive-color);
+    text-align: center;
+    border-radius: 20px 0 0 20px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.PopOutTab:hover {
+    transform: translateX(-10%);
+}
+
+.PopOuttabHidden {
+    visibility: hidden;
+    width: 0;
+}
+
+.TabLabel {
+    position: absolute;
+    font-size: 15pt;
+    font-weight: bold;
+    /* float: center; */
+    writing-mode: sideways-lr;
+    /* text-orientation: ; */
+}
+
+.PopOutWindow {
+    --pop-out-width: 600px;
+    --pop-out-padding: 20px
+    z-index: 2;
+    visibility: visible;
+    position: absolute;
+    left: calc(100vw);
+    top: 100px;
+    box-sizing: border-box;
+    width: var(--pop-out-width);
+    /* height: calc(50vw - 50%); */
+    height: auto;
+    background-color: var(--sidebar-color);
+    color: var(--sidebar-inactive-color);
+    font-size: 15pt;
+    font-weight: bold;
+    border-radius: 20px 0 0 20px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.PopOutWindow.AnimateOut {
+    z-index: 100;
+    animation-name: out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.PopOutWindow.AnimateIn {
+    z-index: 100;
+    animation-name: in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes out {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.Flags {
+    display: flex;
+    gap: 5px;
+}
+
+.Tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* Add dots under the hoverable text */
+  cursor: pointer;
+}
+
+/* Tooltip text */
+.TooltipText {
+  visibility: hidden; /* Hidden by default */
+  width: 170px;
+  background-color: black;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1; /* Ensure tooltip is displayed above content */
+  /* width: 130px; */
+  bottom: 110%;
+  left: 50%;
+  margin-left: -85px; /* Use half of the width (130/2 = 65), to center the tooltip */
+}
+
+.TooltipText::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+/* Show the tooltip text on hover */
+.Tooltip:hover .TooltipText {
+  visibility: visible;
+}

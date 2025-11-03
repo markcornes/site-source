@@ -1,0 +1,84 @@
+.Project {
+    background-color: var(--article-bg-color);
+    padding: 50px;
+    /* color: var(--page-text-color); */
+    /* color: var(--sidebar-color); */
+    color: var(--sidebar-color);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: rgb(121, 107, 81) 5px 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+}
+
+.ProjectButton {
+    --button-shadow-color: rgb(49, 46, 41);
+    background-color: var(--sidebar-color);
+    color: var(--sidebar-inactive-color);
+    font-family: "Courier New";
+    font-weight: bold;
+    font-size: 15pt;
+    /* border: 2px solid black; */
+    border: none;
+    box-shadow: 4px 4px var(--button-shadow-color);
+    border-radius: 50px;
+    text-align: center;
+    padding: 20px;
+    /* position: fixed; */
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+.ProjectButton.Active {
+    color: white;
+    transform: translate(6px, 6px);
+    box-shadow: -2px -2px rgb(88, 75, 57);
+}
+
+.ProjectButton:hover {
+    animation-name: button-hover;
+    animation-duration: .1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes button-hover {
+    from {
+        transform: translate(0, 0);
+        box-shadow: 4px 4px var(--button-shadow-color);
+    }
+    to {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px var(--button-shadow-color);
+    }
+}
+
+.ProjectButton:active {
+    animation-name: button-click;
+    animation-duration: .05s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes button-click {
+    from {
+        transform: translate(0, 0);
+        box-shadow: 4px 4px rgb(88, 75, 57);
+    }
+    to {
+        transform: translate(6px, 6px);
+        box-shadow: -2px -2px rgb(88, 75, 57);
+    }
+}
+
+#maincanvas {
+    width: 100vh;
+    height: 100vh;
+}
+
+#runtext {
+    width: 100vh;
+    height: 100vh;
+}

@@ -1,3 +1,46 @@
+:root {
+  /* global dimensions */
+  --sidebar-width: 140px;
+  --sidebar-padding: 10px;
+  --page-v-padding: 10px;
+  --page-h-padding: 20px;
+  --map-margin: 20px;
+
+  /* colour theme (...yes, with american spelling) */
+  --main-color: #EAE2B7;
+  --sidebar-color: #003049;
+  --sidebar-active-color: var(--page-bg-color);
+  --sidebar-inactive-color: lightgrey;
+  --sidebar-hover-color: #D62828;
+  /* --page-bg-color: #a39e85; */
+  --page-bg-color: #a39e8588;
+  --article-bg-color: #f1e498;
+  --title-bg-color: var(--sidebar-color);
+  --title-text-color: var(--main-color);
+  --page-text-color: rgb(68, 65, 57);
+
+  /* bike page tab attributes: */
+  --tab-width: 40px;
+  --tab-height: 100px;
+}
+
+html {
+  scrollbar-width: none;
+  overflow-x: hidden;
+}
+
+
 body {
     margin: 0;
+    padding: 0;
+    background-color: var(--main-color);
+    /* opacity: 50%; */
+    /* height: auto; */
+    width: auto;
+    /* overflow-x: hidden; */
+}
+
+#root {
+    /* height: auto; */
+    width: auto;
 }

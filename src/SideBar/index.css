@@ -1,44 +1,87 @@
-li:link, 
-li:visited, 
-li:active, 
-li:focus { 
-  color: darkgreen; /* desired color */ 
-  text-decoration: none; /* optional */ 
+a {
+  text-decoration: none;
+  font-size: 15pt;
+  font-weight: bold;
 }
 
-li:hover {
-  color: red;
-  text-decoration: underline double;
+.active {
+  color: var(--sidebar-active-color);
+  text-decoration: none;
+  cursor: default;
 }
 
+.not-active {
+  color: var(--sidebar-inactive-color);
+}
+
+.not-active:hover {
+  text-decoration: double underline;
+  cursor: pointer;
+  animation: link-blink .3s steps(1) infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes link-blink {
+  0% {
+    color: var(--sidebar-hover-color);
+  }
+  50% {
+    color: var(--sidebar-inactive-color);
+  }
+  100% {
+    color: var(--sidebar-hover-color);
+  }
+}
+
+@keyframes active-link-blink {
+  0% {
+    color: var(--sidebar-active-color);
+  }
+  50% {
+    color: rgb(248, 247, 181);
+  }
+  100% {
+    color: var(--sidebar-active-color);
+  }
+}
 
 .sidebar {
-  background-color: #ffffff;
-  position: relative;
+  background-color: var(--sidebar-color);
+  /* opacity: 80%; */
+  /* border-radius: 0 20px 20px 0; */
+  border-radius: 30px;
   box-sizing: border-box;
-  height: 100vh;
-  width: 100%;
+  height: calc(100% - var(--sidebar-padding)*2);
+  /* width: calc(100% - var(--sidebar-padding)*2); */
+  width: auto;
   text-align: right;
-  padding: 10px;
-}
-
-.sidebar-links {
+  padding: 20px;
   list-style-type: none;
   border-spacing: 1px;
   border-collapse: separate;
   align-self: center;
-  padding-inline-start: 0;
+  padding-inline-start: 20;
+  /* box-shadow: rgb(163, 165, 120) -40px 0px; */
+  transform: translateX(-20%);
+  transition: transform .2s ease-in-out;
 }
+
+.sidebar:hover {
+  /* transition: 1s ease-out 0s 1 slide-in; */
+  transform: translateX(0);
+}
+
+/* @keyframes slide-in {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20%);
+  }
+} */
+
+
 
 .table-item {
-  text-decoration: none;
-  font-size: 15pt;
-  color: blue;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.table-item:hover {
-  color: red;
-  cursor: default;
+  margin-bottom: 25px;
 }
