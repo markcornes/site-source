@@ -1,10 +1,13 @@
 import "./index.css";
 import { useState, useEffect, useRef } from "react";
-import { SocialIcon } from 'react-social-icons';
-import { FaStrava, FaInstagram, FaYoutube, FaGithub, FaGithubAlt, FaGithubSquare } from 'react-icons/fa';
+import { FaStrava, FaInstagram, FaYoutube, FaGithub, FaEnvelope, FaAt, FaTelegramPlane } from 'react-icons/fa';
+import { FiMail } from 'react-icons/fi'
+import { AiOutlineMail } from 'react-icons/ai'
+import { NavLink } from "react-router-dom";
 
 // const title_text = "mark cornes"
 const title_text = "...hello there, visitor!"
+export const article_titles = ["welcome", "website"]
 let i = 0;
 
 function TypewriterEffect() {
@@ -31,83 +34,56 @@ function MakeTitle() {
                 <a href='https://www.youtube.com/@MarkCornes'><FaYoutube size={30} className="LinksItem YTIcon"/></a>
                 <a href='https://www.instagram.com/mark._.cornes/'><FaInstagram size={30} className="LinksItem InstaIcon"/></a>
                 <a href='https://www.strava.com/athletes/122838370'><FaStrava size={30} className="LinksItem StravaIcon"/></a>
+                <a href='mailto:cornes.mark@gmail.com'><AiOutlineMail size={30} className="LinksItem MailIcon" /></a>
             </div>
             <div className="SubTitle" id="TypedText">&gt;&gt;&nbsp;</div>
         </div>
     );
 }
 
-function MakeArticle(title, content) {
+export function TitleToURL(title_text) {
+    return(title_text.toLowerCase().replaceAll(' ', '-'));
+}
+
+function JSONToAbbrev(props) {
+    const json = props.json;
+    const nav_name = "/" + TitleToURL(props.json.article_name);
+
     return (
+        <NavLink to={nav_name}>
         <div className="Article">
-            <h2>{title}</h2>
-            {content}
+            <h3>{json.title}</h3>
+            <div className="AbbrevText">{json["paragraphs"] && json.paragraphs[0]}..</div>
+            <br/><br/><div className="BottomAbbrevText">...click to read more</div>
         </div>
+        </NavLink>
     );
 }
 
-function MakeImage(url) {
-    return (
-        <div className="ArticleImageBox">
-            <img src={url} alt="image" width="500" className="ArticleImage" onClick={null}/>
-        </div>
-    );
-}
-
-function JSONToArticle(json) {
-
-    function MakeParagraphs() {
-        const body_text = [];
-        for(let n = 0; n < json.paragraphs.length; n++) {
-            body_text.push(<p>{json.paragraphs[n]}</p>);
-        }
-        return body_text;
+export const fetchData = async (state, state_function) => {
+    for (let j = 0; j < article_titles.length; j++){
+        fetch('./articles/' + article_titles[j] + '.json')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(json) {
+            state_function(state => [...state, json]);
+        });
     }
-
-    function MakeImages() {
-        const images = [];
-        for(let n = 0; n < json.images.length; n++) {
-            images.push(MakeImage(json.images[n]));
-        }
-        return images;
-    }
-    
-    return (
-        <div className="Article">
-            <h2>{json.title}</h2>
-            {json["paragraphs"] && MakeParagraphs()}
-            {json["images"] && MakeImages()}
-        </div>
-    );
 }
 
 function Home() {
     const [articlesJSON, setArticlesJSON] = useState([]);
-    const article_titles = ["welcome.json", "article2.json"]
-
-    const fetchData = async () => {
-        for (let j = 0; j < article_titles.length; j++){
-            console.log(article_titles[j]);
-            fetch('./articles/' + article_titles[j])
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(json) {
-                setArticlesJSON(articlesJSON => [...articlesJSON, json]);
-            });
-        }
-    }
 
     useEffect(() => {
-        fetchData();
-        console.log("used effect");
+        fetchData(articlesJSON, setArticlesJSON);
     }, []);
 
     return (
         <div className="HomePage">
             {MakeTitle()}
             {
-                articlesJSON.map(items => JSONToArticle(items))
+                articlesJSON.map(items => <JSONToAbbrev json={items}/>)
             }
         </div>
     );

@@ -1,0 +1,19 @@
+.Centered {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25pt;
+}
+
+.ConstructionIcon {
+    color: rgb(182, 25, 25);
+    animation: construction 2s steps(1) infinite;
+}
+
+@keyframes construction {
+    0% {
+        color: rgb(196, 13, 13);
+    }
+    50% {
+        color: rgb(243, 124, 14);
+    }
+}

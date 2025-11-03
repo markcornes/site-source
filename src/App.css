@@ -45,3 +45,23 @@
     border-radius: 30px;
     cursor: default;
 }
+
+.Article {
+    background-color: var(--article-bg-color);
+    padding: 50px;
+    /* color: var(--page-text-color); */
+    /* color: var(--sidebar-color); */
+    color: var(--sidebar-color);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: rgb(121, 107, 81) 0px 0px 2px 0px;
+    transition: transform .5s, box-shadow .5s;
+    font-size: 15pt;
+}
+
+.Article:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: rgb(121, 107, 81) 0px 0px 4px 4px;
+}

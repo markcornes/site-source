@@ -1,12 +1,15 @@
 import './index.css'
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react'
 
-const PAGES = ['home', 'projects', 'music', 'bike-trip', 'about']
+const PAGES = ['home', 'projects', 'bike-trip', 'music', 'about']
 const PAGE_NAME = 'home'
 
 function SideBarItem(item_name, page_name) {
-  return (<li className="table-item" key={item_name}><NavLink to={'/' + item_name} className={({ isActive, isPending }) => isPending ? "active" : isActive ? "active" : "not-active"}>{item_name.replace('-',' ')}</NavLink></li>);
+  return (
+    <li className="table-item" key={item_name}>
+      <NavLink to={'/' + item_name} className={({ isActive, isPending }) => isPending ? "active" : isActive ? "active" : "not-active"}>{item_name.replace('-',' ')}</NavLink>
+    </li>
+  );
 }
 
 function AddSideBarItems() {

@@ -1,0 +1,6 @@
+{
+    "article_name": "website",
+    "date": "3/11/2025",
+    "title": "My website: the details",
+    "paragraphs": ["Recently I decided to try my hand at building a website—which I haven’t done for many years—to (a) get more comfortable with Javascript; and (b) have somewhere to test some webapp ideas that I’ve been floating for a while. So, starting with some vague memories of HTML/CSS and even vaguer of JS, I started messing around on a localhost.", "Quite quickly I realised pure HTML and CSS would make designing anything more than one or two pages a real hassle, so I figured I’d try make a simple JS script that could generate the HTML I needed on each render. It wasn’t long before I realised there might already be a solution (at this point I knew almost nothing about frontend/webdev), and I quickly found React.js."]
+}

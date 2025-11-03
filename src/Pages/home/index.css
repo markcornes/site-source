@@ -6,7 +6,14 @@ h1 {
 h2 {
     margin: 0;
     padding: 0;
-    text-shadow: 1px 2px var(--page-bg-color);
+    font-size: 30pt;
+    /* text-shadow: 1px 1px 0px var(--page-bg-color); */
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 20pt;
 }
 
 p {
@@ -37,6 +44,11 @@ p {
 .GithubIcon {
     background-color: #333333;
     color: white;
+}
+
+.MailIcon {
+    background-color: #333333;
+    color: rgb(255, 255, 255);
 }
 
 .HomeTitleContainer {
@@ -80,12 +92,13 @@ p {
 .LinksItem {
     border-radius: 100%;
     padding: 10px;
-    transition: transform .2s, opacity .2s;
+    transition: transform .2s, opacity .2s, box-shadow .2s;
 }
 
 .LinksItem:hover {
     transform: scale(1.1);
     opacity: 80%;
+    box-shadow: rgb(36, 36, 36) 0px 0px 5px 0px;
 }
 
 
@@ -120,23 +133,9 @@ p {
     }
 }
 
-.Article {
-    background-color: var(--article-bg-color);
-    padding: 50px;
-    /* color: var(--page-text-color); */
-    /* color: var(--sidebar-color); */
-    color: var(--sidebar-color);
-    border-radius: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: rgb(121, 107, 81) 3px 5px;
-    transition: transform .5s, box-shadow .5s;
-}
-
-.Article:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: rgb(121, 107, 81) 7px 9px;
+.ArticleParagraph {
+    margin: 50px 50px 50px 50px;
+    text-align: justify;
 }
 
 .ArticleImageBox {
@@ -153,5 +152,18 @@ p {
     background: var(--sidebar-color);
     box-shadow: rgb(124, 94, 11) 4px 4px;
     border-radius: 4px;
-    cursor: pointer;
+    /* cursor: pointer; */
+}
+
+.AbbrevText {
+    /* 1 top 2 right 3 bottom 4 left */
+    margin: 20px 20px 0px 20px;
+    font-weight: normal;
+    text-align: justify;
+}
+
+.BottomAbbrevText {
+    font-weight: bold;
+    color: var(--sidebar-color);
+    text-align: right;
 }
