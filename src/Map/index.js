@@ -71,7 +71,7 @@ function MapMaker() {
   }
 
   return (
-    <APIProvider apiKey={"AIzaSyBNvdrX5TxD_tplajh6HRseKWvG19bYmKU"}>
+    <APIProvider apiKey={"AIzaSyDB4k6f-0JitWSqVtZeMx1-5nO4W21zQVg"}>
       <Map
         mapId={"DEMO_MAP_ID"}
         mapTypeId={"terrain"}
