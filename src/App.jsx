@@ -23,8 +23,8 @@ function App() {
 
   return (
     <div>
-    {/* <div className="BackgroundContainer">{(isBackground ? <SketchComp /> : "")}</div> */}
-    {/* <SketchComp /> */}
+    {/* <div className="BackgroundContainer">{(isBackground ? <SketchComp /> : "")}</div>
+    <SketchComp /> */}
       <BrowserRouter>
         <div className="SideBarContainer">
           <MakeSideBar is_Background={isBackground} set_Background={setBackground}/>
